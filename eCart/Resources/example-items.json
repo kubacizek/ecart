@@ -1,0 +1,34 @@
+[
+   {
+      "id":0,
+      "description":{
+         "en":"Pea (pack)",
+         "cs":"Hrášek (balení)"
+      },
+      "price":0.95
+   },
+   {
+      "id":1,
+      "description":{
+         "en":"Egg (12 pieces)",
+         "cs":"Vejce (12 ks)"
+      },
+      "price":2.1
+   },
+   {
+      "id":2,
+      "description":{
+         "en":"Milk (bottle)",
+         "cs":"Mléko (láhev)"
+      },
+      "price":1.3
+   },
+   {
+      "id":3,
+      "description":{
+         "en":"Beans (can)",
+         "cs":"Fazole (plechovka)"
+      },
+      "price":0.73
+   }
+]

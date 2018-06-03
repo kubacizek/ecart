@@ -13,6 +13,12 @@
 		8CF0105A20C497B300C5320A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0105820C497B300C5320A /* Main.storyboard */; };
 		8CF0105C20C497B400C5320A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0105B20C497B400C5320A /* Assets.xcassets */; };
 		8CF0105F20C497B400C5320A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0105D20C497B400C5320A /* LaunchScreen.storyboard */; };
+		8CF0106C20C4A47B00C5320A /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0106B20C4A47B00C5320A /* API.swift */; };
+		8CF0106E20C4A48500C5320A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0106D20C4A48500C5320A /* Constants.swift */; };
+		8CF0107320C4A54100C5320A /* CartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0107220C4A54100C5320A /* CartItem.swift */; };
+		8CF0107520C4A56D00C5320A /* example-items.json in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0107420C4A56D00C5320A /* example-items.json */; };
+		8CF0107E20C4A5D900C5320A /* localization in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0107D20C4A5D900C5320A /* localization */; };
+		8CF0108120C4A60F00C5320A /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108020C4A60F00C5320A /* Localization.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +31,12 @@
 		8CF0105B20C497B400C5320A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8CF0105E20C497B400C5320A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8CF0106020C497B400C5320A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CF0106B20C4A47B00C5320A /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		8CF0106D20C4A48500C5320A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8CF0107220C4A54100C5320A /* CartItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItem.swift; sourceTree = "<group>"; };
+		8CF0107420C4A56D00C5320A /* example-items.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "example-items.json"; sourceTree = "<group>"; };
+		8CF0107D20C4A5D900C5320A /* localization */ = {isa = PBXFileReference; lastKnownFileType = folder; path = localization; sourceTree = "<group>"; };
+		8CF0108020C4A60F00C5320A /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		9D56014C434250C5E57C117F /* Pods_eCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				8CF0106820C4A40000C5320A /* Model */,
+				8CF0106F20C4A4F100C5320A /* Controller */,
+				8CF0107020C4A4F600C5320A /* View */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -90,6 +104,8 @@
 				8CF0106920C4A42200C5320A /* Storyboards */,
 				8CF0105B20C497B400C5320A /* Assets.xcassets */,
 				8CF0106020C497B400C5320A /* Info.plist */,
+				8CF0107420C4A56D00C5320A /* example-items.json */,
+				8CF0107D20C4A5D900C5320A /* localization */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -98,6 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				8CF0105420C497B300C5320A /* AppDelegate.swift */,
+				8CF0106D20C4A48500C5320A /* Constants.swift */,
+				8CF0106B20C4A47B00C5320A /* API.swift */,
+				8CF0107F20C4A5F700C5320A /* Utilities */,
+				8CF0107120C4A52700C5320A /* Models */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +129,36 @@
 				8CF0105D20C497B400C5320A /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8CF0106F20C4A4F100C5320A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8CF0107020C4A4F600C5320A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8CF0107120C4A52700C5320A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0107220C4A54100C5320A /* CartItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8CF0107F20C4A5F700C5320A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0108020C4A60F00C5320A /* Localization.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		D87A39DF33D855FCEF60DE68 /* Pods */ = {
@@ -181,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF0105F20C497B400C5320A /* LaunchScreen.storyboard in Resources */,
+				8CF0107E20C4A5D900C5320A /* localization in Resources */,
+				8CF0107520C4A56D00C5320A /* example-items.json in Resources */,
 				8CF0105C20C497B400C5320A /* Assets.xcassets in Resources */,
 				8CF0105A20C497B300C5320A /* Main.storyboard in Resources */,
 			);
@@ -233,7 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CF0105720C497B300C5320A /* ViewController.swift in Sources */,
+				8CF0106C20C4A47B00C5320A /* API.swift in Sources */,
+				8CF0108120C4A60F00C5320A /* Localization.swift in Sources */,
 				8CF0105520C497B300C5320A /* AppDelegate.swift in Sources */,
+				8CF0107320C4A54100C5320A /* CartItem.swift in Sources */,
+				8CF0106E20C4A48500C5320A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 5VXMGXT6UE;
-				INFOPLIST_FILE = eCart/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/eCart/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -402,7 +458,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = eCart/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/eCart/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
