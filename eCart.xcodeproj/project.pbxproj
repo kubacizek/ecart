@@ -69,14 +69,46 @@
 		8CF0105320C497B300C5320A /* eCart */ = {
 			isa = PBXGroup;
 			children = (
-				8CF0105420C497B300C5320A /* AppDelegate.swift */,
+				8CF0106620C4A3E800C5320A /* Classes */,
+				8CF0106720C4A3F000C5320A /* Resources */,
 				8CF0105620C497B300C5320A /* ViewController.swift */,
-				8CF0105820C497B300C5320A /* Main.storyboard */,
-				8CF0105B20C497B400C5320A /* Assets.xcassets */,
-				8CF0105D20C497B400C5320A /* LaunchScreen.storyboard */,
-				8CF0106020C497B400C5320A /* Info.plist */,
 			);
 			path = eCart;
+			sourceTree = "<group>";
+		};
+		8CF0106620C4A3E800C5320A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0106820C4A40000C5320A /* Model */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8CF0106720C4A3F000C5320A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0106920C4A42200C5320A /* Storyboards */,
+				8CF0105B20C497B400C5320A /* Assets.xcassets */,
+				8CF0106020C497B400C5320A /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8CF0106820C4A40000C5320A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0105420C497B300C5320A /* AppDelegate.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8CF0106920C4A42200C5320A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0105820C497B300C5320A /* Main.storyboard */,
+				8CF0105D20C497B400C5320A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		D87A39DF33D855FCEF60DE68 /* Pods */ = {
