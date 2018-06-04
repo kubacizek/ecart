@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		
+		let localizationUrl = Bundle.main.bundleURL.appendingPathComponent("localization")
+		try! Localization.load(url: localizationUrl)
+		Localization.currentLanguage = UserDefaults.standard.selectedLanguage ?? "en"
+		
 		return true
 	}
 
