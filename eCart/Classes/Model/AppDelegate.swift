@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		let localizationUrl = Bundle.main.bundleURL.appendingPathComponent("localization")
 		try! Localization.load(url: localizationUrl)
-		Localization.currentLanguage = UserDefaults.standard.selectedLanguage ?? "en"
+		Localization.currentLanguage = UserDefaults.standard.selectedLanguage ?? "cs"
 		
 		return true
 	}
