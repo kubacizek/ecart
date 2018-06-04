@@ -38,6 +38,7 @@ class CurrenciesTableViewController: UITableViewController {
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let currency = currencies[indexPath.row]
 		UserDefaults.standard.selectedCurrency = currency.code
+		NotificationCenter.default.post(name: .currencyChanged, object: nil)
 		navigationController?.popViewController(animated: true)
 	}
 

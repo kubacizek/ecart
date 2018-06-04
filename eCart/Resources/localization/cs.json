@@ -14,5 +14,7 @@
 	"notice" : "Upozornění",
 	"serverError" : "Chyba při komunikaci se serverem",
 	"useOldData" : "Použít poslední stažená data",
-	"retry" : "Zkusit znovu"
+	"retry" : "Zkusit znovu",
+	"total" : "Celkem ",
+	"end" : "Konec"
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CartTableViewController: UITableViewController, ItemCellDelegate {
 
@@ -29,8 +30,6 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 		
 		let refreshControl = UIRefreshControl()
 		refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
-		
-		// this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
 		tableView.refreshControl = refreshControl
     }
 	
@@ -124,6 +123,7 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 			button?.layer.cornerRadius = 5
 			button?.layer.borderWidth = 1
 			button?.layer.borderColor = button?.tintColor.cgColor
+			button?.addTarget(self, action: #selector(showSummary), for: .touchUpInside)
 			return cell
 		default:
 			return UITableViewCell()
@@ -141,10 +141,17 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 	
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		switch indexPath.section {
-		case 1:()
+		case 1:
+			showSummary()
 		default:()
 		}
 		tableView.deselectRow(at: indexPath, animated: true)
+	}
+	
+	// MARK: Actions
+	
+	@objc func showSummary() {
+		performSegue(withIdentifier: "showSummary", sender: nil)
 	}
 	
 	@objc func refresh(sender: UIRefreshControl) {
@@ -152,8 +159,12 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 			if let responseItems = responseItems {
 				self.items = responseItems
 				API.getRates(completion: { rates in
-					self.tableView.reloadData()
 					sender.endRefreshing()
+					if let rates = rates, rates.count > 0 {
+					} else {
+						self.showAlert()
+					}
+					self.tableView.reloadData()
 				})
 			} else {
 				// show error
@@ -161,50 +172,48 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 			}
 		}
 	}
+	
+	func getData() {
+		API.getCurrencies { currencies in
+			if let currencies = currencies, currencies.count > 0 {
+				API.getRates(completion: { rates in
+					if let rates = rates, rates.count > 0 {
+						self.tableView.reloadData()
+					} else {
+						self.showAlert()
+					}
+				})
+			} else {
+				self.showAlert()
+			}
+		}
+	}
+	
+	func showAlert() {
+		let currencies = Realm.shared.objects(Currency.self)
+		let rates = Realm.shared.objects(Rate.self)
+		
+		let alert = UIAlertController(title: ~"notice", message: ~"serverError", preferredStyle: .alert)
+		
+		if currencies.count > 0 && rates.count > 0 {
+			alert.addAction(UIAlertAction(title: ~"useOldData", style: .default, handler: { _ in
+				self.tableView.reloadData()
+			}))
+		}
+		
+		alert.addAction(UIAlertAction(title: ~"retry", style: .default, handler: { _ in
+			self.getData()
+		}))
+		
+		self.present(alert, animated: true, completion: nil)
+	}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+		if let summary = segue.destination as? SummaryTableViewController {
+			summary.itemsInCart = itemsInCart
+		}
     }
-    */
 
 }

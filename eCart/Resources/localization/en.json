@@ -14,5 +14,7 @@
 	"notice" : "Notice",
 	"serverError" : "Server error",
 	"useOldData" : "Use latest downloaded data",
-	"retry" : "Retry"
+	"retry" : "Retry",
+	"total" : "Total ",
+	"end" : "End"
 }

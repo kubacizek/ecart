@@ -23,3 +23,7 @@ extension UIStoryboard {
 		return UIStoryboard(name: "Main", bundle: nil)
 	}
 }
+
+extension Notification.Name {
+	@nonobjc static let currencyChanged = Notification.Name("currencyChanged")
+}
