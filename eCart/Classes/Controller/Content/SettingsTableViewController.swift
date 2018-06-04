@@ -48,23 +48,18 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		if let currency = UserDefaults.standard.selectedCurrency {
+			currencyLabel.text = currency
+		} else {
+			currencyLabel.text = ~"settings.notSet"
+		}
+	}
 
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		switch indexPath.row {
@@ -76,16 +71,22 @@ class SettingsTableViewController: UITableViewController {
 				popoverController.sourceRect = tableView.cellForRow(at: indexPath)?.bounds ?? CGRect.zero
 			}
 			
+			let initialViewController = UIStoryboard.main.instantiateInitialViewController()
+			
 			optionMenu.addAction(UIAlertAction(title: ~"settings.czech", style: .default) { _ in
-				print("czechAction")
+				Localization.currentLanguage = "cs"
+				UserDefaults.standard.selectedLanguage = "cs"
+				UIApplication.shared.keyWindow?.rootViewController = initialViewController
+				UIApplication.shared.keyWindow?.makeKeyAndVisible()
 			})
 			optionMenu.addAction(UIAlertAction(title: ~"settings.english", style: .default) { _ in
-				print("slovakAction")
+				Localization.currentLanguage = "en"
+				UserDefaults.standard.selectedLanguage = "en"
+				UIApplication.shared.keyWindow?.rootViewController = initialViewController
+				UIApplication.shared.keyWindow?.makeKeyAndVisible()
 			})
 			
-			optionMenu.addAction(UIAlertAction(title: ~"close", style: .cancel) { _ in
-				print("cancelAction")
-			})
+			optionMenu.addAction(UIAlertAction(title: ~"close", style: .cancel) { _ in })
 			
 			present(optionMenu, animated: true, completion: nil)
 		case 1:

@@ -17,3 +17,9 @@ extension API {
 extension Realm {
 	@nonobjc static let shared = try! Realm()
 }
+
+extension UIStoryboard {
+	@nonobjc public static var main: UIStoryboard {
+		return UIStoryboard(name: "Main", bundle: nil)
+	}
+}

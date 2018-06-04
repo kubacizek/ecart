@@ -5,7 +5,7 @@
          "en":"Pea (pack)",
          "cs":"Hrášek (balení)"
       },
-      "image":"beans",
+      "image":"pea",
       "price":0.95
    },
    {
@@ -14,7 +14,7 @@
          "en":"Egg (12 pieces)",
          "cs":"Vejce (12 ks)"
       },
-      "image":"milk",
+      "image":"eggs",
       "price":2.1
    },
    {
@@ -23,7 +23,7 @@
          "en":"Milk (bottle)",
          "cs":"Mléko (láhev)"
       },
-      "image":"eggs",
+      "image":"milk",
       "price":1.3
    },
    {
@@ -32,7 +32,7 @@
          "en":"Beans (can)",
          "cs":"Fazole (plechovka)"
       },
-      "image":"pea",
+      "image":"beans",
       "price":0.73
    }
 ]
