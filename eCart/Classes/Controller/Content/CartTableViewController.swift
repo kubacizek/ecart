@@ -26,11 +26,22 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 		}
 		
 		API.getCurrencies()
-		
 		API.getRates()
 
         title = ~"tab.items"
+		
+		let refreshControl = UIRefreshControl()
+		refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+		
+		// this is the replacement of implementing: "collectionView.addSubview(refreshControl)"
+		tableView.refreshControl = refreshControl
     }
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		tableView.reloadData()
+	}
 	
 	// MARK: ItemCellDelegate
 	
@@ -44,7 +55,6 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 	}
 	
 	func stepperChangedValue(item: CartItem, value: Int) {
-		print(item, value)
 		if let inCart = itemsInCart.first(where: { $0.item?.id == item.id }) {
 			inCart.quantity = value
 		}
@@ -128,6 +138,21 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 		default:()
 		}
 		tableView.deselectRow(at: indexPath, animated: true)
+	}
+	
+	@objc func refresh(sender: UIRefreshControl) {
+		API.getItems { responseItems in
+			if let responseItems = responseItems {
+				self.items = responseItems
+				API.getRates(completion: { rates in
+					self.tableView.reloadData()
+					sender.endRefreshing()
+				})
+			} else {
+				// show error
+				sender.endRefreshing()
+			}
+		}
 	}
 
     /*
