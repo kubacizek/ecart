@@ -4,6 +4,9 @@
 	"addToCart" : "Do košíku",
 	"continue" : "Pokračovat",
 	"settings.chooseLanguage" : "Zvolte jazyk",
-	"settings.czech" : "Česky",
-	"settings.english" : "Anglicky"
+	"settings.czech" : "Čeština",
+	"settings.english" : "Angličtina",
+	"settings.language" : "Jazyk",
+	"settings.currency" : "Měna",
+	"settings.notSet" : "Není nastaveno"
 }

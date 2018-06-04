@@ -22,6 +22,8 @@
 		8CF0108720C4B74800C5320A /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108620C4B74800C5320A /* ItemCell.swift */; };
 		8CF0108920C4B90D00C5320A /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108820C4B90D00C5320A /* UserDefaults.swift */; };
 		8CF0108B20C4D56D00C5320A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108A20C4D56D00C5320A /* SettingsTableViewController.swift */; };
+		8CF0108D20C4DC8200C5320A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108C20C4DC8200C5320A /* Currency.swift */; };
+		8CF0108F20C4E56600C5320A /* CurrenciesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108E20C4E56500C5320A /* CurrenciesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		8CF0108620C4B74800C5320A /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		8CF0108820C4B90D00C5320A /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		8CF0108A20C4D56D00C5320A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		8CF0108C20C4DC8200C5320A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		8CF0108E20C4E56500C5320A /* CurrenciesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesTableViewController.swift; sourceTree = "<group>"; };
 		9D56014C434250C5E57C117F /* Pods_eCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -157,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF0107220C4A54100C5320A /* CartItem.swift */,
+				8CF0108C20C4DC8200C5320A /* Currency.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			children = (
 				8CF0108320C4B6F600C5320A /* CartTableViewController.swift */,
 				8CF0108A20C4D56D00C5320A /* SettingsTableViewController.swift */,
+				8CF0108E20C4E56500C5320A /* CurrenciesTableViewController.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -319,6 +325,8 @@
 				8CF0108120C4A60F00C5320A /* Localization.swift in Sources */,
 				8CF0108920C4B90D00C5320A /* UserDefaults.swift in Sources */,
 				8CF0105520C497B300C5320A /* AppDelegate.swift in Sources */,
+				8CF0108D20C4DC8200C5320A /* Currency.swift in Sources */,
+				8CF0108F20C4E56600C5320A /* CurrenciesTableViewController.swift in Sources */,
 				8CF0107320C4A54100C5320A /* CartItem.swift in Sources */,
 				8CF0106E20C4A48500C5320A /* Constants.swift in Sources */,
 				8CF0108B20C4D56D00C5320A /* SettingsTableViewController.swift in Sources */,

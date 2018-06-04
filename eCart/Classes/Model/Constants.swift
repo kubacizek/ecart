@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import RealmSwift
 
 extension API {
 	static let baseUrl = "http://apilayer.net/api/"
+	static let accessKey = "1841fd8cd68ae7dae7f44c150fb4a6ca"
+}
+
+extension Realm {
+	@nonobjc static let shared = try! Realm()
 }

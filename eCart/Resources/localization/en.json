@@ -5,5 +5,8 @@
 	"continue" : "Continue",
 	"settings.chooseLanguage" : "Choose Language",
 	"settings.czech" : "Czech",
-	"settings.english" : "English"
+	"settings.english" : "English",
+	"settings.language" : "Language",
+	"settings.currency" : "Currency",
+	"settings.notSet" : "Not set"
 }

@@ -18,4 +18,14 @@ extension UserDefaults {
 			synchronize()
 		}
 	}
+	
+	var selectedCurrency: String? {
+		get {
+			return string(forKey: "currency")
+		}
+		set {
+			set(newValue, forKey: "currency")
+			synchronize()
+		}
+	}
 }

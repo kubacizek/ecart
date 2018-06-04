@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 struct API {
 	static func getItems(completion: (([CartItem]?) -> Void)? = nil) {
@@ -38,4 +39,30 @@ struct API {
 			}
 		}
 	}
+	
+	static func getCurrencies(completion: (([Currency]?) -> Void)? = nil) {
+		let request = Alamofire.request(baseUrl + "list?access_key=" + accessKey)
+		request.responseJSON { response in
+			if let result = response.result.value as? [String: Any],
+				let currenciesResult = result["currencies"] as? [String: String] {
+				
+//				let jsonDecoder = JSONDecoder()
+				var currencies: [Currency] = []
+				
+				try! Realm.shared.write {
+					for item in currenciesResult {
+						let currency = Currency()
+						currency.code = item.key
+						currency.currencyName = item.value
+						currencies.append(currency)
+						Realm.shared.add(currency, update: true)
+					}
+				}
+				
+				completion?(currencies)
+				
+			}
+		}
+	}
+	
 }

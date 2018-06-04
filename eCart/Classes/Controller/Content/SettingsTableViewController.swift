@@ -10,7 +10,36 @@ import UIKit
 
 class SettingsTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
+	@IBOutlet weak var languageTitleLabel: UILabel! {
+		didSet {
+			languageTitleLabel.text = ~"settings.language"
+		}
+	}
+	@IBOutlet weak var languageLabel: UILabel! {
+		didSet {
+			if Localization.currentLanguage == "cs" {
+				languageLabel.text = ~"settings.czech"
+			} else {
+				languageLabel.text = ~"settings.english"
+			}
+		}
+	}
+	@IBOutlet weak var currencyTitleLabel: UILabel! {
+		didSet {
+			currencyTitleLabel.text = ~"settings.currency"
+		}
+	}
+	@IBOutlet weak var currencyLabel: UILabel! {
+		didSet {
+			if let currency = UserDefaults.standard.selectedCurrency {
+				currencyLabel.text = currency
+			} else {
+				currencyLabel.text = ~"settings.notSet"
+			}
+		}
+	}
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -59,6 +88,8 @@ class SettingsTableViewController: UITableViewController {
 			})
 			
 			present(optionMenu, animated: true, completion: nil)
+		case 1:
+			performSegue(withIdentifier: "showCurrencies", sender: nil)
 		default:()
 		}
 		tableView.deselectRow(at: indexPath, animated: true)
