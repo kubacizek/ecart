@@ -1,5 +1,9 @@
 {
 	"back" : "Back",
 	"close" : "Close",
-	"addToCart" : "Add to cart"
+	"addToCart" : "Add to cart",
+	"continue" : "Continue",
+	"settings.chooseLanguage" : "Choose Language",
+	"settings.czech" : "Czech",
+	"settings.english" : "English"
 }

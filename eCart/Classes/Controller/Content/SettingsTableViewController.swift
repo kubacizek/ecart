@@ -27,16 +27,43 @@ class SettingsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		switch indexPath.row {
+		case 0:
+			let optionMenu = UIAlertController(title: nil, message: ~"settings.chooseLanguage", preferredStyle: .actionSheet)
+			
+			if let popoverController = optionMenu.popoverPresentationController {
+				popoverController.sourceView = tableView.cellForRow(at: indexPath)
+				popoverController.sourceRect = tableView.cellForRow(at: indexPath)?.bounds ?? CGRect.zero
+			}
+			
+			optionMenu.addAction(UIAlertAction(title: ~"settings.czech", style: .default) { _ in
+				print("czechAction")
+			})
+			optionMenu.addAction(UIAlertAction(title: ~"settings.english", style: .default) { _ in
+				print("slovakAction")
+			})
+			
+			optionMenu.addAction(UIAlertAction(title: ~"close", style: .cancel) { _ in
+				print("cancelAction")
+			})
+			
+			present(optionMenu, animated: true, completion: nil)
+		default:()
+		}
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
+	
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

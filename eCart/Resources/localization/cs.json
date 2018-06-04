@@ -1,5 +1,9 @@
 {
 	"back" : "Zpět",
 	"close" : "Zavřít",
-	"addToCart" : "Do košíku"
+	"addToCart" : "Do košíku",
+	"continue" : "Pokračovat",
+	"settings.chooseLanguage" : "Zvolte jazyk",
+	"settings.czech" : "Česky",
+	"settings.english" : "Anglicky"
 }

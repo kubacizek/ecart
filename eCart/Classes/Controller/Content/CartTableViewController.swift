@@ -52,40 +52,78 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 	}
 
     // MARK: - Table view data source
+	
+	override func numberOfSections(in tableView: UITableView) -> Int {
+		return 2
+	}
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+		switch section {
+		case 0:
+			return items.count
+		case 1:
+			return 1
+		default:
+			return 0
+		}
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
-		let item = items[indexPath.row]
-		if let inCart = itemsInCart.first(where: { $0.item?.id == item.id }) {
-			cell.countLabel.text = String(inCart.quantity)
-			if inCart.quantity > 0 {
-				UIView.animate(withDuration: 0.3) {
-					cell.stepperView.alpha = 1
-					cell.addToCartButton.alpha = 0
-				}
-			} else {
-				UIView.animate(withDuration: 0.3) {
-					cell.stepperView.alpha = 0
-					cell.addToCartButton.alpha = 1
+		switch indexPath.section {
+		case 0:
+			let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+			let item = items[indexPath.row]
+			if let inCart = itemsInCart.first(where: { $0.item?.id == item.id }) {
+				cell.countLabel.text = String(inCart.quantity)
+				if inCart.quantity > 0 {
+					UIView.animate(withDuration: 0.3) {
+						cell.stepperView.alpha = 1
+						cell.addToCartButton.alpha = 0
+					}
+				} else {
+					UIView.animate(withDuration: 0.3) {
+						cell.stepperView.alpha = 0
+						cell.addToCartButton.alpha = 1
+					}
 				}
 			}
+			
+			cell.item = item
+			cell.delegate = self
+			cell.itemImageView.image = UIImage(named: item.image)
+			cell.descriptionLabel.text = item.localizedDescription
+			cell.priceLabel.text = String(item.price)
+			
+			return cell
+		case 1:
+			let cell = tableView.dequeueReusableCell(withIdentifier: "ContinueCell", for: indexPath)
+			let button = cell.viewWithTag(1) as? UIButton
+			button?.setTitle(~"continue", for: .normal)
+			button?.backgroundColor = .clear
+			button?.layer.cornerRadius = 5
+			button?.layer.borderWidth = 1
+			button?.layer.borderColor = button?.tintColor.cgColor
+			return cell
+		default:
+			return UITableViewCell()
 		}
-		
-		cell.item = item
-		cell.delegate = self
-		cell.itemImageView.image = UIImage(named: item.image)
-		cell.descriptionLabel.text = item.localizedDescription
-		cell.priceLabel.text = String(item.price)
-
-        return cell
     }
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 101
+		switch indexPath.section {
+		case 0:
+			return 101
+		default:
+			return 51
+		}
+	}
+	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		switch indexPath.section {
+		case 1:()
+		default:()
+		}
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 
     /*
