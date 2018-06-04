@@ -24,9 +24,6 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 				// show error
 			}
 		}
-		
-		API.getCurrencies()
-		API.getRates()
 
         title = ~"tab.items"
 		
@@ -57,6 +54,11 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 	func stepperChangedValue(item: CartItem, value: Int) {
 		if let inCart = itemsInCart.first(where: { $0.item?.id == item.id }) {
 			inCart.quantity = value
+			if value == 0 {
+				if let index = itemsInCart.index(where: { $0.item?.id == item.id }) {
+					itemsInCart.remove(at: Int(index))
+				}
+			}
 		}
 		tableView.reloadData()
 	}
@@ -64,7 +66,7 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
     // MARK: - Table view data source
 	
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 2
+		return itemsInCart.count > 0 ? 2 : 1
 	}
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,6 +97,11 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 						cell.stepperView.alpha = 0
 						cell.addToCartButton.alpha = 1
 					}
+				}
+			} else {
+				UIView.animate(withDuration: 0.3) {
+					cell.stepperView.alpha = 0
+					cell.addToCartButton.alpha = 1
 				}
 			}
 			

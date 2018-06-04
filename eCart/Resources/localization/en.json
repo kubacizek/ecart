@@ -10,5 +10,9 @@
 	"settings.currency" : "Currency",
 	"settings.notSet" : "Not set",
 	"tab.items" : "Items",
-	"tab.settings" : "Settings"
+	"tab.settings" : "Settings",
+	"notice" : "Notice",
+	"serverError" : "Server error",
+	"useOldData" : "Use latest downloaded data",
+	"retry" : "Retry"
 }

@@ -27,6 +27,8 @@
 		8CF0109220C4EC1300C5320A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0109120C4EC1300C5320A /* MainTabBarViewController.swift */; };
 		8CF0109420C4ED9B00C5320A /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0109320C4ED9B00C5320A /* Rate.swift */; };
 		8CF0109620C4EFD800C5320A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0109520C4EFD800C5320A /* Utilities.swift */; };
+		8CF0109820C4F9ED00C5320A /* SummaryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0109720C4F9ED00C5320A /* SummaryTableViewController.swift */; };
+		8CF0109A20C4FA0400C5320A /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0109920C4FA0400C5320A /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,8 @@
 		8CF0109120C4EC1300C5320A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		8CF0109320C4ED9B00C5320A /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 		8CF0109520C4EFD800C5320A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8CF0109720C4F9ED00C5320A /* SummaryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryTableViewController.swift; sourceTree = "<group>"; };
+		8CF0109920C4FA0400C5320A /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9D56014C434250C5E57C117F /* Pods_eCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,6 +193,8 @@
 				8CF0108320C4B6F600C5320A /* CartTableViewController.swift */,
 				8CF0108A20C4D56D00C5320A /* SettingsTableViewController.swift */,
 				8CF0108E20C4E56500C5320A /* CurrenciesTableViewController.swift */,
+				8CF0109720C4F9ED00C5320A /* SummaryTableViewController.swift */,
+				8CF0109920C4FA0400C5320A /* SplashViewController.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -346,10 +352,12 @@
 				8CF0109420C4ED9B00C5320A /* Rate.swift in Sources */,
 				8CF0108D20C4DC8200C5320A /* Currency.swift in Sources */,
 				8CF0108F20C4E56600C5320A /* CurrenciesTableViewController.swift in Sources */,
+				8CF0109820C4F9ED00C5320A /* SummaryTableViewController.swift in Sources */,
 				8CF0107320C4A54100C5320A /* CartItem.swift in Sources */,
 				8CF0109220C4EC1300C5320A /* MainTabBarViewController.swift in Sources */,
 				8CF0106E20C4A48500C5320A /* Constants.swift in Sources */,
 				8CF0108B20C4D56D00C5320A /* SettingsTableViewController.swift in Sources */,
+				8CF0109A20C4FA0400C5320A /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -58,6 +58,9 @@ struct API {
 					}
 				}
 				completion?(currencies)
+			} else {
+				print("getCurrencies ERROR:", response.result.value as Any)
+				completion?(nil)
 			}
 		}
 	}
@@ -80,6 +83,9 @@ struct API {
 					}
 				}
 				completion?(rates)
+			} else {
+				print("getRates ERROR:", response.result.value as Any)
+				completion?(nil)
 			}
 		}
 	}

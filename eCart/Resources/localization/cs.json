@@ -10,5 +10,9 @@
 	"settings.currency" : "Měna",
 	"settings.notSet" : "Není nastaveno",
 	"tab.items" : "Položky",
-	"tab.settings" : "Nastavení"
+	"tab.settings" : "Nastavení",
+	"notice" : "Upozornění",
+	"serverError" : "Chyba při komunikaci se serverem",
+	"useOldData" : "Použít poslední stažená data",
+	"retry" : "Zkusit znovu"
 }
