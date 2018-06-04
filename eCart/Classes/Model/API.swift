@@ -46,7 +46,6 @@ struct API {
 			if let result = response.result.value as? [String: Any],
 				let currenciesResult = result["currencies"] as? [String: String] {
 				
-//				let jsonDecoder = JSONDecoder()
 				var currencies: [Currency] = []
 				
 				try! Realm.shared.write {
@@ -58,9 +57,29 @@ struct API {
 						Realm.shared.add(currency, update: true)
 					}
 				}
-				
 				completion?(currencies)
+			}
+		}
+	}
+	
+	static func getRates(completion: (([Rate]?) -> Void)? = nil) {
+		let request = Alamofire.request(baseUrl + "live?access_key=" + accessKey)
+		request.responseJSON { response in
+			if let result = response.result.value as? [String: Any],
+				let ratesResult = result["quotes"] as? [String: Double] {
 				
+				var rates: [Rate] = []
+				
+				try! Realm.shared.write {
+					for item in ratesResult {
+						let rate = Rate()
+						rate.code = item.key
+						rate.rate = item.value
+						rates.append(rate)
+						Realm.shared.add(rate, update: true)
+					}
+				}
+				completion?(rates)
 			}
 		}
 	}

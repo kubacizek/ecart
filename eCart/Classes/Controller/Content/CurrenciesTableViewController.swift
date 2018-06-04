@@ -16,7 +16,7 @@ class CurrenciesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        currencies = Array(Realm.shared.objects(Currency.self))
+        currencies = Array(Realm.shared.objects(Currency.self).sorted(byKeyPath: "codelter", ascending: true))
 		tableView.reloadData()
     }
 

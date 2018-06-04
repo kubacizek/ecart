@@ -8,5 +8,7 @@
 	"settings.english" : "English",
 	"settings.language" : "Language",
 	"settings.currency" : "Currency",
-	"settings.notSet" : "Not set"
+	"settings.notSet" : "Not set",
+	"tab.items" : "Items",
+	"tab.settings" : "Settings"
 }

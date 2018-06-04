@@ -8,5 +8,7 @@
 	"settings.english" : "Angličtina",
 	"settings.language" : "Jazyk",
 	"settings.currency" : "Měna",
-	"settings.notSet" : "Není nastaveno"
+	"settings.notSet" : "Není nastaveno",
+	"tab.items" : "Položky",
+	"tab.settings" : "Nastavení"
 }

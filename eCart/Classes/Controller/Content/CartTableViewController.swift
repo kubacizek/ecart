@@ -26,12 +26,10 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 		}
 		
 		API.getCurrencies()
+		
+		API.getRates()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        title = ~"tab.items"
     }
 	
 	// MARK: ItemCellDelegate
@@ -94,7 +92,11 @@ class CartTableViewController: UITableViewController, ItemCellDelegate {
 			cell.delegate = self
 			cell.itemImageView.image = UIImage(named: item.image)
 			cell.descriptionLabel.text = item.localizedDescription
-			cell.priceLabel.text = String(item.price)
+			if let rate = Utilities.rate, let currency = UserDefaults.standard.selectedCurrency {
+				cell.priceLabel.text = String(format: "%.2f", item.price * rate) + " " + currency
+			} else {
+				cell.priceLabel.text = String(format: "%.2f", item.price) + " USD"
+			}
 			
 			return cell
 		case 1:

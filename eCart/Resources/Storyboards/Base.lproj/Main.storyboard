@@ -296,10 +296,10 @@
             </objects>
             <point key="canvasLocation" x="505" y="189"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="P1T-UP-dHO">
             <objects>
-                <tabBarController id="QRN-dq-Xzj" sceneMemberID="viewController">
+                <tabBarController id="QRN-dq-Xzj" customClass="MainTabBarViewController" customModule="eCart" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CRR-Cx-hJ7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

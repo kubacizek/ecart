@@ -24,6 +24,9 @@
 		8CF0108B20C4D56D00C5320A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108A20C4D56D00C5320A /* SettingsTableViewController.swift */; };
 		8CF0108D20C4DC8200C5320A /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108C20C4DC8200C5320A /* Currency.swift */; };
 		8CF0108F20C4E56600C5320A /* CurrenciesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0108E20C4E56500C5320A /* CurrenciesTableViewController.swift */; };
+		8CF0109220C4EC1300C5320A /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0109120C4EC1300C5320A /* MainTabBarViewController.swift */; };
+		8CF0109420C4ED9B00C5320A /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0109320C4ED9B00C5320A /* Rate.swift */; };
+		8CF0109620C4EFD800C5320A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF0109520C4EFD800C5320A /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		8CF0108A20C4D56D00C5320A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		8CF0108C20C4DC8200C5320A /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		8CF0108E20C4E56500C5320A /* CurrenciesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesTableViewController.swift; sourceTree = "<group>"; };
+		8CF0109120C4EC1300C5320A /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		8CF0109320C4ED9B00C5320A /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		8CF0109520C4EFD800C5320A /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		9D56014C434250C5E57C117F /* Pods_eCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_eCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -145,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF0108220C4B6DA00C5320A /* Content */,
+				8CF0109020C4EBE700C5320A /* Navigation */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 			children = (
 				8CF0107220C4A54100C5320A /* CartItem.swift */,
 				8CF0108C20C4DC8200C5320A /* Currency.swift */,
+				8CF0109320C4ED9B00C5320A /* Rate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				8CF0108020C4A60F00C5320A /* Localization.swift */,
+				8CF0109520C4EFD800C5320A /* Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -190,6 +199,14 @@
 				8CF0108620C4B74800C5320A /* ItemCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		8CF0109020C4EBE700C5320A /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8CF0109120C4EC1300C5320A /* MainTabBarViewController.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		D87A39DF33D855FCEF60DE68 /* Pods */ = {
@@ -321,13 +338,16 @@
 			files = (
 				8CF0108720C4B74800C5320A /* ItemCell.swift in Sources */,
 				8CF0106C20C4A47B00C5320A /* API.swift in Sources */,
+				8CF0109620C4EFD800C5320A /* Utilities.swift in Sources */,
 				8CF0108420C4B6F600C5320A /* CartTableViewController.swift in Sources */,
 				8CF0108120C4A60F00C5320A /* Localization.swift in Sources */,
 				8CF0108920C4B90D00C5320A /* UserDefaults.swift in Sources */,
 				8CF0105520C497B300C5320A /* AppDelegate.swift in Sources */,
+				8CF0109420C4ED9B00C5320A /* Rate.swift in Sources */,
 				8CF0108D20C4DC8200C5320A /* Currency.swift in Sources */,
 				8CF0108F20C4E56600C5320A /* CurrenciesTableViewController.swift in Sources */,
 				8CF0107320C4A54100C5320A /* CartItem.swift in Sources */,
+				8CF0109220C4EC1300C5320A /* MainTabBarViewController.swift in Sources */,
 				8CF0106E20C4A48500C5320A /* Constants.swift in Sources */,
 				8CF0108B20C4D56D00C5320A /* SettingsTableViewController.swift in Sources */,
 			);
